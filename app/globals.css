@@ -1,16 +1,41 @@
 @import "tailwindcss";
 
-@theme {
-  --color-navy: #1b2237;
-  --color-navy-2: #232b40;
-  --color-navy-3: #2b3350;
-  --color-gold: #c19c4d;
-  --color-gold-2: #d4b571;
-  --color-gold-deep: #a3823b;
-  --color-ivory: #f4f3ef;
-  --color-ivory-2: #e7e5de;
-  --color-ink: #171b28;
-  --color-muted: #6f7486;
+/* ============================================================
+   THE ARCHITECT CONSULTIUM — Design Tokens
+   Theme: "Architect Gold"
+   Navy and gold sampled from Pastor Banji's own brand mockups.
+   Single committed theme. CSS variables only.
+   ============================================================ */
+
+:root {
+  --bg-primary: #1b2237;
+  --bg-secondary: #232b40;
+  --bg-tertiary: #2b3350;
+
+  --surface-primary: #f4f3ef;
+  --surface-secondary: #e9e7e0;
+
+  --text-primary: #171b28;
+  --text-secondary: #4d5468;
+  --text-tertiary: #6f7486;
+
+  --brand-light: #d4b571;
+  --brand-mid: #c19c4d;
+  --brand-dark: #a3823b;
+}
+
+@theme inline {
+  --color-navy: var(--bg-primary);
+  --color-navy-2: var(--bg-secondary);
+  --color-navy-3: var(--bg-tertiary);
+  --color-ivory: var(--surface-primary);
+  --color-ivory-2: var(--surface-secondary);
+  --color-ink: var(--text-primary);
+  --color-body: var(--text-secondary);
+  --color-muted: var(--text-tertiary);
+  --color-gold: var(--brand-mid);
+  --color-gold-2: var(--brand-light);
+  --color-gold-deep: var(--brand-dark);
 
   --font-display: var(--font-newsreader), Georgia, serif;
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
@@ -19,22 +44,29 @@
 }
 
 @layer base {
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    background-color: var(--color-ivory);
-    color: var(--color-ink);
+    background-color: var(--surface-primary);
+    color: var(--text-primary);
     font-family: var(--font-sans);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     font-family: var(--font-display);
     font-weight: 400;
     letter-spacing: -0.015em;
-    line-height: 1.1;
+    line-height: 1.08;
     text-wrap: balance;
   }
-  :focus-visible { outline: 2px solid var(--color-gold); outline-offset: 3px; }
+  :focus-visible {
+    outline: 2px solid var(--brand-mid);
+    outline-offset: 3px;
+  }
 }
 
 @utility eyebrow {
@@ -44,6 +76,16 @@
   letter-spacing: 0.2em;
 }
 
+/* Large letterspaced serif divider, the spine of the page */
+@utility sect-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  line-height: 1.1;
+  font-size: clamp(0.95rem, 0.85rem + 0.5vw, 1.35rem);
+}
+
 @utility shell {
   width: 100%;
   max-width: 1240px;
@@ -51,15 +93,40 @@
   padding-inline: clamp(1.25rem, 5vw, 4rem);
 }
 
-@utility section-y { padding-block: clamp(3.5rem, 8vw, 7rem); }
+@utility section-y {
+  padding-block: clamp(4rem, 9vw, 8rem);
+}
 
-.rv { opacity: 0; transform: translate3d(0, 16px, 0); }
+.trail::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.22;
+  margin-top: 1.25rem;
+}
+
+.rv {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+}
 .rv[data-in="true"] {
-  opacity: 1; transform: none;
-  transition: opacity .7s var(--ease-arch), transform .7s var(--ease-arch);
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.7s var(--ease-arch),
+    transform 0.7s var(--ease-arch);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
-  .rv { opacity: 1; transform: none; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  .rv {
+    opacity: 1;
+    transform: none;
+  }
 }

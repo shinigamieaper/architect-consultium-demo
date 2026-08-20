@@ -6,9 +6,10 @@ import { useDemo } from "./DemoState";
 
 const links = [
   { href: "/#programmes", label: "Programmes" },
+  { href: "/#speaking", label: "Speaking" },
   { href: "/#books", label: "Books" },
-  { href: "/#writing", label: "Writing" },
-  { href: "/library", label: "Member library" },
+  { href: "/#writing", label: "Journal" },
+  { href: "/library", label: "Library" },
 ];
 
 export default function Nav() {
