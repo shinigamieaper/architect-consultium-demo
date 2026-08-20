@@ -1,27 +1,37 @@
 @import "tailwindcss";
 
 /* ============================================================
-   THE ARCHITECT CONSULTIUM — Design Tokens
-   Theme: "Architect Gold"
-   Navy and gold sampled from Pastor Banji's own brand mockups.
-   Single committed theme. CSS variables only.
+   THE ARCHITECT CONSULTIUM
+   Theme: "Gold Ground"
+
+   Architecture: a saturated gold ground fills the frame, and every
+   page opens with a dark stage inset inside it. Type runs at poster
+   scale, the portrait crosses in front of it, and every control is
+   a pill. Navy and gold are his own brand colours.
    ============================================================ */
 
 :root {
-  --bg-primary: #1b2237;
-  --bg-secondary: #232b40;
-  --bg-tertiary: #2b3350;
+  --bg-primary: #12172a;
+  --bg-secondary: #1b2237;
+  --bg-tertiary: #262f49;
 
   --surface-primary: #f4f3ef;
   --surface-secondary: #e9e7e0;
 
   --text-primary: #171b28;
   --text-secondary: #4d5468;
-  --text-tertiary: #6f7486;
+  --text-tertiary: #5c6274;
 
   --brand-light: #d4b571;
   --brand-mid: #c19c4d;
-  --brand-dark: #a3823b;
+  --brand-dark: #8f6626;
+
+  --ground-top: #d8b264;
+  --ground-mid: #b8873a;
+  --ground-base: #7d5820;
+
+  --frame: clamp(0.5rem, 0.9vw, 1rem);
+  --radius: clamp(18px, 2.2vw, 34px);
 }
 
 @theme inline {
@@ -37,7 +47,7 @@
   --color-gold-2: var(--brand-light);
   --color-gold-deep: var(--brand-dark);
 
-  --font-display: var(--font-newsreader), Georgia, serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 
   --ease-arch: cubic-bezier(0.16, 1, 0.3, 1);
@@ -48,7 +58,7 @@
     scroll-behavior: smooth;
   }
   body {
-    background-color: var(--surface-primary);
+    background: var(--ground-base);
     color: var(--text-primary);
     font-family: var(--font-sans);
     line-height: 1.7;
@@ -59,13 +69,55 @@
   h3 {
     font-family: var(--font-display);
     font-weight: 400;
-    letter-spacing: -0.015em;
-    line-height: 1.08;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
     text-wrap: balance;
   }
   :focus-visible {
-    outline: 2px solid var(--brand-mid);
+    outline: 2px solid var(--brand-light);
     outline-offset: 3px;
+  }
+}
+
+/* ---------- the frame and the stage ---------- */
+
+@utility ground {
+  background:
+    radial-gradient(
+      125% 100% at 50% -10%,
+      var(--ground-top) 0%,
+      var(--ground-mid) 46%,
+      var(--ground-base) 100%
+    );
+  padding: var(--frame);
+}
+
+@utility stage {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--bg-primary);
+}
+
+/* ---------- type ---------- */
+
+@utility poster {
+  display: block;
+  font-family: var(--font-display);
+  /* the poster cut: heavy, opened up optically, tracked in hard */
+  font-weight: 900;
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+  font-size: clamp(3.25rem, 19vw, 7rem);
+  line-height: 0.84;
+  letter-spacing: -0.032em;
+}
+
+/* From the tablet up the name is sized off the viewport so the two words keep
+   the same share of the card at every width, which is what holds the overlap
+   with the portrait steady. */
+@media (min-width: 768px) {
+  .poster {
+    font-size: min(10.9vw, 11.25rem);
   }
 }
 
@@ -76,25 +128,53 @@
   letter-spacing: 0.2em;
 }
 
-/* Large letterspaced serif divider, the spine of the page */
 @utility sect-title {
   font-family: var(--font-display);
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.26em;
   line-height: 1.1;
-  font-size: clamp(0.95rem, 0.85rem + 0.5vw, 1.35rem);
+  font-size: clamp(0.9rem, 0.8rem + 0.45vw, 1.25rem);
 }
+
+/* ---------- controls ---------- */
+
+@utility pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.6rem 1.15rem;
+  font-size: 0.8125rem;
+  line-height: 1.15;
+  white-space: nowrap;
+  transition:
+    background-color 0.3s var(--ease-arch),
+    border-color 0.3s var(--ease-arch),
+    color 0.3s var(--ease-arch),
+    transform 0.3s var(--ease-arch);
+}
+.pill:active {
+  transform: translateY(1px);
+}
+
+/* ---------- layout ---------- */
 
 @utility shell {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1180px;
   margin-inline: auto;
-  padding-inline: clamp(1.25rem, 5vw, 4rem);
+  padding-inline: clamp(1.25rem, 4.5vw, 3.5rem);
 }
 
 @utility section-y {
-  padding-block: clamp(4rem, 9vw, 8rem);
+  padding-block: clamp(3.5rem, 8vw, 7rem);
+}
+
+/* a rounded panel that echoes the stage, used for content blocks */
+@utility panel {
+  border-radius: clamp(14px, 1.4vw, 22px);
+  overflow: hidden;
 }
 
 .trail::after {

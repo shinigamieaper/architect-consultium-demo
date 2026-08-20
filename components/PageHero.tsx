@@ -1,5 +1,7 @@
+import Stage from "./Stage";
 import Reveal from "./Reveal";
 
+/** The same stage as the home page, opened at a shorter height. */
 export default function PageHero({
   eyebrow,
   title,
@@ -12,28 +14,38 @@ export default function PageHero({
   lede?: string;
 }) {
   return (
-    <section className="bg-navy text-ivory">
-      <div className="shell py-[clamp(3rem,6vw,5.5rem)]">
+    <Stage minH="min-h-[clamp(340px,54vh,520px)]">
+      <div className="relative isolate flex flex-1 flex-col justify-end px-[clamp(1.25rem,4vw,3.25rem)] pb-[clamp(1.75rem,4vh,3rem)] pt-[clamp(6.5rem,15vh,9rem)]">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-24 -top-24 -z-10 h-[420px] w-[420px] rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(193,156,77,.28) 0%, transparent 66%)",
+          }}
+        />
         <Reveal>
-          <p className="sect-title text-gold">{eyebrow}</p>
+          <p className="eyebrow text-gold-2">{eyebrow}</p>
         </Reveal>
         <Reveal delay={80}>
-          <h1 className="mt-6 max-w-[18ch] text-[clamp(2.1rem,1.4rem+2.6vw,3.5rem)]">
+          <h1 className="mt-5 max-w-[15ch] font-display text-[clamp(2.4rem,1.6rem+3.2vw,5rem)] leading-[0.95] text-ivory">
             {title}
             {italic ? (
               <>
                 {" "}
-                <em className="italic text-gold">{italic}</em>
+                <em className="italic text-gold-2">{italic}</em>
               </>
             ) : null}
           </h1>
         </Reveal>
         {lede ? (
           <Reveal delay={160}>
-            <p className="mt-6 max-w-[56ch] text-ivory/75">{lede}</p>
+            <p className="mt-6 max-w-[54ch] text-[0.9375rem] text-ivory/65">
+              {lede}
+            </p>
           </Reveal>
         ) : null}
       </div>
-    </section>
+    </Stage>
   );
 }

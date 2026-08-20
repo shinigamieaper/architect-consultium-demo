@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import { Newsreader, Manrope } from "next/font/google";
+import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
 import DemoBar from "@/components/DemoBar";
 import { DemoProvider } from "@/components/DemoState";
 
-const display = Newsreader({
-  variable: "--font-newsreader",
+/* One display family doing two jobs: 400 carries the section and page
+   headings, 900 carries the poster words on the stage. The optical size axis
+   is what stops the heavy cut going spindly once it is 170px tall. */
+const display = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["400", "500"],
   style: ["normal", "italic"],
+  axes: ["SOFT", "WONK", "opsz"],
   display: "swap",
 });
 

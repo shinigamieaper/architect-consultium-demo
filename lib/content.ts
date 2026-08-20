@@ -85,8 +85,8 @@ export const programmes: Programme[] = [
     who: "For anyone starting, at their own speed",
     blurb:
       "The full teaching, recorded and structured. Start when you want, finish when you finish, come back to it whenever you need it.",
-    img: "/img/speak_c.jpg",
-    alt: "An auditorium during a session",
+    img: "/img/pba.jpg",
+    alt: "Pastor Olabanji Afolabi",
     lessons: [
       {
         n: "01",
@@ -124,17 +124,15 @@ export const speaking = {
 export const books = [
   {
     title: "The Architecture of Leadership",
-    note: "The book the Purpose Academy is built on.",
+    note: "Placeholder cover and title. Your real book goes here.",
     price: "CAD 24",
-    priceNgn: "NGN 18,000",
     img: "/img/book_a.jpg",
     alt: "An open book on a desk",
   },
   {
     title: "Building People Who Build Others",
-    note: "On raising leaders inside your own house.",
+    note: "Placeholder cover and title. Your real book goes here.",
     price: "CAD 21",
-    priceNgn: "NGN 15,500",
     img: "/img/book_b.jpg",
     alt: "A closed book beside a notebook",
   },
@@ -150,13 +148,11 @@ export const plans = [
   {
     name: "Six months",
     price: "CAD 90",
-    ngn: "NGN 66,000",
     note: "Full access to every programme and every article for six months.",
   },
   {
     name: "One year",
     price: "CAD 150",
-    ngn: "NGN 110,000",
     note: "Everything above, plus first access to new material as it is released.",
     best: true,
   },

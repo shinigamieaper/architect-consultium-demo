@@ -8,7 +8,7 @@ Built by Growveloper. Nothing here takes payment and no card is processed.
 ## What it shows
 
 - The public site: programmes, books, writing
-- Two payment rails: dollars for Canada and worldwide, naira for Nigeria
+- One checkout, one currency, cards accepted worldwide. Where his buyers live is his question to answer, not ours to assume.
 - The member library, which is the part that is hard to picture:
   - Signed out, the first session of each programme is free and the rest are locked
   - Joined, everything opens, with an active plan and an expiry date
