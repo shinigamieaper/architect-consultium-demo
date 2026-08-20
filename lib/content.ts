@@ -164,17 +164,23 @@ export const articles = [
     date: "August 2026",
     mins: "6 min read",
     cat: "Character",
+    excerpt:
+      "The people who pour into everyone else are usually the ones nobody is pouring into. What that costs, and how to fix it before it breaks them.",
   },
   {
     title: "Why your best people leave quietly",
     date: "July 2026",
     mins: "8 min read",
     cat: "Teams",
+    excerpt:
+      "Good people rarely leave in a row. They leave in a series of small moments nobody wrote down. Here is what those moments look like.",
   },
   {
     title: "Authority is not volume",
     date: "June 2026",
     mins: "5 min read",
     cat: "Character",
+    excerpt:
+      "Authority that has to raise its voice was never authority. On the quiet weight that makes a room listen without being asked.",
   },
 ];

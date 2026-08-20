@@ -81,7 +81,7 @@ export default function Library() {
         </Stage>
 
         <section className="section-y bg-ivory">
-          <div className="shell grid gap-10 lg:grid-cols-[260px_1fr] lg:gap-16">
+          <div className="shell grid min-w-0 gap-10 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-16">
             {/* programme list */}
             <aside>
               <p className="eyebrow mb-4 text-muted">Programmes</p>

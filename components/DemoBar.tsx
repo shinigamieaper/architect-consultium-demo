@@ -5,7 +5,7 @@ import { useDemo } from "./DemoState";
 export default function DemoBar() {
   const { member, setMember } = useDemo();
   return (
-    <div className="fixed bottom-[calc(var(--frame)+0.75rem)] right-[calc(var(--frame)+0.75rem)] z-40 max-w-[calc(100vw-2rem)] flex items-center gap-3 rounded-full border border-white/15 bg-navy/95 px-3 py-2 text-ivory shadow-lg backdrop-blur">
+    <div className="fixed inset-x-[calc(var(--frame)+0.75rem)] bottom-[calc(var(--frame)+0.75rem)] z-40 ml-auto flex w-fit max-w-[calc(100vw-2.5rem)] flex-wrap items-center gap-3 rounded-full border border-white/15 bg-navy/95 px-3 py-2 text-ivory shadow-lg backdrop-blur">
       <span className="eyebrow pl-2 text-ivory/50">Demo</span>
       <div className="flex overflow-hidden rounded-full border border-white/15">
         <button

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useDemo } from "./DemoState";
 import { plans } from "@/lib/content";
@@ -53,6 +54,35 @@ export default function Join() {
             ) : null}
           </div>
 
+          {member ? (
+            <div className="panel border border-gold/40 bg-white/5 p-7">
+              <p className="eyebrow text-gold-2">Your plan</p>
+              <p className="mt-4 font-display text-[2rem] leading-none text-ivory">
+                One year
+              </p>
+              <p className="mt-3 text-[0.9375rem] text-ivory/65">
+                Active until 20 August 2027. Everything opens for you, and it
+                renews on its own unless you stop it.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link
+                  href="/library"
+                  className="pill bg-gold px-7 py-3.5 font-medium text-navy hover:bg-gold-2"
+                >
+                  Open the library
+                </Link>
+                <button
+                  type="button"
+                  className="pill border border-white/25 px-7 py-3.5 text-ivory hover:border-white/50 hover:bg-white/5"
+                >
+                  Manage billing
+                </button>
+              </div>
+              <p className="mt-3 text-[0.75rem] text-ivory/55">
+                Demo only. No card is taken and no money moves.
+              </p>
+            </div>
+          ) : (
           <div>
             <p className="eyebrow text-ivory/55">Choose a plan</p>
             <p className="mt-3 text-[0.8125rem] text-ivory/50">
@@ -102,7 +132,8 @@ export default function Join() {
             <p className="mt-3 text-[0.75rem] text-ivory/55">
               Demo only. No card is taken and no money moves.
             </p>
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </Stage>

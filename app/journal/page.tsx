@@ -77,9 +77,7 @@ export default function JournalPage() {
                           {a.title}
                         </h2>
                         <p className="mt-3 max-w-[62ch] text-body">
-                          An executive summary sits at the top of every article,
-                          written so a search engine or an AI assistant can
-                          quote it without mangling the point.
+                          {a.excerpt}
                         </p>
                         <span className="mt-3 block text-[0.8125rem] text-muted">
                           {a.date} &middot; {a.mins}
