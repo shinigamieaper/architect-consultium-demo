@@ -124,9 +124,6 @@ export default async function ProgrammePage({
                     <span className="font-display text-[2rem] leading-none">
                       {p.price}
                     </span>
-                    <span className="text-[0.875rem] text-muted">
-                      or {p.ngn} in naira
-                    </span>
                     <span className="mt-2 text-[0.9375rem] text-body">
                       {p.note}
                     </span>
@@ -135,8 +132,8 @@ export default async function ProgrammePage({
               ))}
             </div>
             <p className="mt-5 text-[0.8125rem] text-muted">
-              Canada and worldwide pay in dollars. Nigeria pays in naira, on a
-              Nigerian card.
+              Cards accepted worldwide. Access opens the moment the payment
+              clears and closes when the term ends.
             </p>
           </div>
         </section>

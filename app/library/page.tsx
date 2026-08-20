@@ -197,8 +197,8 @@ export default function Library() {
                     The rest of this programme is for members.
                   </p>
                   <p className="mt-2 max-w-[54ch] text-[0.9375rem] text-muted">
-                    Six months or a year, paid in dollars or in naira. Access
-                    opens the moment you pay and closes when the term ends.
+                    Six months or a year. Access opens the moment you pay and
+                    closes when the term ends.
                   </p>
                   <Link
                     href="/#join"

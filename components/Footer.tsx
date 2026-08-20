@@ -25,7 +25,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-1.5 text-[0.875rem]">
               <li>Six months</li>
               <li>One year</li>
-              <li>Pay in dollars or naira</li>
+              <li>Cards accepted worldwide</li>
             </ul>
           </div>
         </div>

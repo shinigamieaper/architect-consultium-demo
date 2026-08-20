@@ -4,11 +4,9 @@ import { useState } from "react";
 import { useDemo } from "./DemoState";
 import { plans } from "@/lib/content";
 
-type Rail = "world" | "nigeria";
 
 export default function Join() {
   const { member, setMember } = useDemo();
-  const [rail, setRail] = useState<Rail>("world");
   const [picked, setPicked] = useState(1);
   const [state, setState] = useState<"idle" | "paying">("idle");
 
@@ -49,26 +47,9 @@ export default function Join() {
           </div>
 
           <div>
-            {/* payment rail */}
-            <p className="eyebrow text-ivory/50">Where are you paying from</p>
-            <div className="mt-3 inline-flex overflow-hidden border border-white/20">
-              <button
-                onClick={() => setRail("world")}
-                className={`px-5 py-2.5 text-[0.8125rem] transition-colors ${rail === "world" ? "bg-gold text-navy" : "text-ivory/70 hover:text-ivory"}`}
-              >
-                Canada and worldwide
-              </button>
-              <button
-                onClick={() => setRail("nigeria")}
-                className={`px-5 py-2.5 text-[0.8125rem] transition-colors ${rail === "nigeria" ? "bg-gold text-navy" : "text-ivory/70 hover:text-ivory"}`}
-              >
-                Nigeria
-              </button>
-            </div>
+            <p className="eyebrow text-ivory/50">Choose a plan</p>
             <p className="mt-3 text-[0.8125rem] text-ivory/55">
-              {rail === "world"
-                ? "Card checkout in Canadian dollars."
-                : "Naira checkout on a Nigerian card, so it clears."}
+              Cards accepted worldwide. Renewals and expiry are handled for you.
             </p>
 
             <div className="mt-7 grid gap-4 sm:grid-cols-2">
@@ -89,7 +70,7 @@ export default function Join() {
                       ) : null}
                     </span>
                     <span className="font-display text-[1.9rem] leading-none text-ivory">
-                      {rail === "world" ? p.price : p.ngn}
+                      {p.price}
                     </span>
                     <span className="text-[0.8125rem] text-ivory/60">
                       {p.note}
@@ -104,11 +85,7 @@ export default function Join() {
               disabled={state === "paying"}
               className="mt-6 inline-flex items-center bg-gold px-8 py-3.5 text-sm font-medium tracking-wide text-navy transition-colors hover:bg-gold-2 active:translate-y-px disabled:opacity-70"
             >
-              {state === "paying"
-                ? "Opening checkout"
-                : rail === "world"
-                  ? "Pay in dollars"
-                  : "Pay in naira"}
+              {state === "paying" ? "Opening checkout" : "Join now"}
             </button>
             <p className="mt-3 text-[0.75rem] text-ivory/45">
               Demo only. No card is taken and no money moves.

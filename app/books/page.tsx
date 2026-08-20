@@ -16,7 +16,7 @@ export default function BooksPage() {
           eyebrow="Books"
           title="Written down, so it"
           italic="outlives the room."
-          lede="Buy in dollars from Canada and anywhere else, or in naira on a Nigerian card. Same book, two checkouts, so nobody is stopped at the till."
+          lede="Cards accepted worldwide, so nobody is stopped at the till. The same checkout carries the resources and the membership plans."
         />
 
         <section className="section-y">
@@ -39,21 +39,11 @@ export default function BooksPage() {
                     </h2>
                     <p className="mt-3 max-w-[58ch] text-body">{b.note}</p>
 
-                    <dl className="mt-6 grid max-w-[420px] grid-cols-2 gap-x-8 border-t border-ink/12 pt-4">
-                      <div>
-                        <dt className="eyebrow text-muted">
-                          Canada and worldwide
-                        </dt>
-                        <dd className="mt-1 font-display text-[1.6rem]">
-                          {b.price}
-                        </dd>
-                      </div>
-                      <div>
-                        <dt className="eyebrow text-muted">Nigeria</dt>
-                        <dd className="mt-1 font-display text-[1.6rem]">
-                          {b.priceNgn}
-                        </dd>
-                      </div>
+                    <dl className="mt-6 max-w-[420px] border-t border-ink/12 pt-4">
+                      <dt className="eyebrow text-muted">Price</dt>
+                      <dd className="mt-1 font-display text-[1.75rem]">
+                        {b.price}
+                      </dd>
                     </dl>
 
                     <div className="mt-6 flex flex-wrap gap-3">
@@ -61,13 +51,13 @@ export default function BooksPage() {
                         type="button"
                         className="inline-flex items-center bg-navy px-7 py-3.5 text-sm font-medium text-ivory transition-colors hover:bg-navy-3 active:translate-y-px"
                       >
-                        Buy in dollars
+                        Add to basket
                       </button>
                       <button
                         type="button"
                         className="inline-flex items-center border border-ink/25 px-7 py-3.5 text-sm transition-colors hover:border-ink active:translate-y-px"
                       >
-                        Buy in naira
+                        Read a sample
                       </button>
                     </div>
                     <p className="mt-3 text-[0.75rem] text-muted">

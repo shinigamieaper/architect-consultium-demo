@@ -73,8 +73,8 @@ export default function Page() {
                 <Reveal delay={160}>
                   <p className="mt-7 max-w-[50ch] text-ivory/75">
                     Mentorship, coaching and the Purpose Academy, with the books
-                    and the writing behind them. One place, one login, and a way
-                    to pay whether you are in Lagos or in Canada.
+                    and the writing behind them. One place, one login, and a
+                    checkout that works wherever they are.
                   </p>
                 </Reveal>
                 <Reveal delay={240}>
@@ -155,7 +155,7 @@ export default function Page() {
                 <dl className="border-t border-ink/12">
                   {[
                     { k: "Works with", v: "Leaders and teams" },
-                    { k: "Based in", v: "Lagos and Canada" },
+                    { k: "Reaches", v: "Wherever they are" },
                     { k: "Teaches", v: "Character, purpose, weight" },
                   ].map((r) => (
                     <div
@@ -290,12 +290,12 @@ export default function Page() {
             </Reveal>
             <Reveal delay={60}>
               <h2 className="mt-10 text-[clamp(1.8rem,1.3rem+1.9vw,2.75rem)]">
-                Buy the book, in{" "}
-                <em className="italic text-gold-deep">your own currency</em>.
+                Read it first, then{" "}
+                <em className="italic text-gold-deep">come and work with me</em>.
               </h2>
               <p className="mt-4 max-w-[54ch] text-body">
-                Canada and the rest of the world check out in dollars. Nigeria
-                checks out in naira, on a Nigerian card that actually clears.
+                Cards accepted worldwide, for the books and for everything
+                else. The same checkout carries the resources and the plans.
               </p>
             </Reveal>
 
@@ -319,7 +319,7 @@ export default function Page() {
                       <p className="mt-1 text-[0.875rem] text-muted">{b.note}</p>
                       <p className="mt-auto pt-3 text-[0.9375rem]">
                         <span className="font-medium">{b.price}</span>
-                        <span className="text-muted"> / {b.priceNgn}</span>
+                        
                       </p>
                     </div>
                   </article>
