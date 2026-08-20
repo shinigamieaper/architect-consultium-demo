@@ -209,10 +209,10 @@ export default function Page() {
                       {p.blurb}
                     </p>
                     <Link
-                      href="/library"
+                      href={`/programmes/${p.slug}`}
                       className="mt-auto inline-flex items-center gap-2 pt-6 text-[0.8125rem] tracking-wide text-gold underline-offset-4 hover:underline"
                     >
-                      Open in the library
+                      Open the programme
                       <Arrow />
                     </Link>
                   </article>

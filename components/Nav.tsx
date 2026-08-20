@@ -5,10 +5,11 @@ import Logo from "./Logo";
 import { useDemo } from "./DemoState";
 
 const links = [
-  { href: "/#programmes", label: "Programmes" },
-  { href: "/#speaking", label: "Speaking" },
-  { href: "/#books", label: "Books" },
-  { href: "/#writing", label: "Journal" },
+  { href: "/#story", label: "About" },
+  { href: "/programmes/purpose-academy", label: "Programmes" },
+  { href: "/speaking", label: "Speaking" },
+  { href: "/books", label: "Books" },
+  { href: "/journal", label: "Journal" },
   { href: "/library", label: "Library" },
 ];
 
