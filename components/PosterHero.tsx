@@ -18,7 +18,7 @@ export default function PosterHero() {
         {/* warm light behind his head, so he lifts off the stage */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute left-[56%] top-[40%] -z-10 h-[min(100%,940px)] w-[min(100%,940px)] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          className="pointer-events-none absolute left-[56.5%] top-[40%] -z-10 h-[min(100%,940px)] w-[min(100%,940px)] -translate-x-1/2 -translate-y-1/2 rounded-full"
           style={{
             background:
               "radial-gradient(circle, rgba(212,181,113,.28) 0%, rgba(193,156,77,.09) 46%, transparent 70%)",
@@ -110,7 +110,7 @@ export default function PosterHero() {
           width={520}
           height={527}
           priority
-          className="pointer-events-none absolute bottom-0 left-[54%] z-20 hidden h-[98%] w-auto max-w-none -translate-x-1/2 select-none object-contain md:block"
+          className="pointer-events-none absolute bottom-0 left-[56.5%] z-20 hidden h-[98%] w-auto max-w-none -translate-x-1/2 select-none object-contain md:block"
         />
       </div>
     </Stage>

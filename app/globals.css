@@ -117,7 +117,7 @@
    with the portrait steady. */
 @media (min-width: 768px) {
   .poster {
-    font-size: min(10.9vw, 11.25rem);
+    font-size: min(12.1vw, 18rem);
   }
 }
 
