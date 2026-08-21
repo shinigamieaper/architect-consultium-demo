@@ -39,9 +39,9 @@ export default function PosterHero() {
         />
 
         {/* his name, the largest thing on the page */}
-        <h1 className="relative z-10 pt-[clamp(5.5rem,13vh,9rem)] md:absolute md:inset-x-0 md:top-[10.5%] md:pt-0">
-          <span className="poster pl-[5%] text-ivory">Olabanji</span>
-          <span className="poster pr-[2.8%] text-right text-ivory">Afolabi</span>
+        <h1 className="relative pt-[clamp(5.5rem,13vh,9rem)] md:absolute md:inset-x-0 md:top-[10.5%] md:pt-0">
+          <span className="poster relative z-10 pl-[5%] text-ivory">Olabanji</span>
+          <span className="poster relative z-30 pr-[2.8%] text-right text-ivory">Afolabi</span>
         </h1>
 
         {/* a phone has no room for the overlap, so he sits framed between his
@@ -66,7 +66,7 @@ export default function PosterHero() {
         </div>
 
         {/* corners */}
-        <div className="relative z-30 flex flex-wrap items-end justify-between gap-x-10 gap-y-8 px-[5%] pb-28 pt-[clamp(2rem,6vh,4rem)] md:mt-auto md:pb-[clamp(4.5rem,8vh,5.5rem)]">
+        <div className="relative z-40 flex flex-wrap items-end justify-between gap-x-10 gap-y-8 px-[5%] pb-28 pt-[clamp(2rem,6vh,4rem)] md:mt-auto md:pb-[clamp(4.5rem,8vh,5.5rem)]">
           <div className="max-w-[38ch]">
             <p className="font-display text-[clamp(1.3rem,1.05rem+1vw,1.95rem)] leading-[1.15] text-ivory">
               Build altars. Raise leaders.
