@@ -144,7 +144,8 @@
   align-items: center;
   gap: 0.5rem;
   border-radius: 999px;
-  padding: 0.6rem 1.15rem;
+  /* 44px tall on touch screens, which is the smallest comfortable tap target */
+  padding: 0.8rem 1.35rem;
   font-size: 0.8125rem;
   line-height: 1.15;
   white-space: nowrap;
@@ -156,6 +157,12 @@
 }
 .pill:active {
   transform: translateY(1px);
+}
+
+@media (min-width: 768px) {
+  .pill {
+    padding: 0.6rem 1.15rem;
+  }
 }
 
 /* ---------- layout ---------- */

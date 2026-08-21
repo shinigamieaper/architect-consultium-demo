@@ -10,13 +10,13 @@ export default function DemoBar() {
       <div className="flex overflow-hidden rounded-full border border-white/15">
         <button
           onClick={() => setMember(false)}
-          className={`px-4 py-1.5 text-[0.8125rem] transition-colors ${!member ? "bg-gold text-navy" : "text-ivory/70 hover:text-ivory"}`}
+          className={`px-4 py-2.5 text-[0.8125rem] transition-colors ${!member ? "bg-gold text-navy" : "text-ivory/70 hover:text-ivory"}`}
         >
           Not a member
         </button>
         <button
           onClick={() => setMember(true)}
-          className={`px-4 py-1.5 text-[0.8125rem] transition-colors ${member ? "bg-gold text-navy" : "text-ivory/70 hover:text-ivory"}`}
+          className={`px-4 py-2.5 text-[0.8125rem] transition-colors ${member ? "bg-gold text-navy" : "text-ivory/70 hover:text-ivory"}`}
         >
           Member
         </button>

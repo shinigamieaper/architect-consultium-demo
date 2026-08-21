@@ -37,12 +37,12 @@ export default function Footer() {
           {columns.map((c) => (
             <div key={c.head}>
               <p className="eyebrow mb-4 text-ivory/55">{c.head}</p>
-              <ul className="flex flex-col gap-2 text-[0.875rem]">
+              <ul className="flex flex-col text-[0.875rem] md:gap-2">
                 {c.items.map((it) => (
                   <li key={it.href}>
                     <Link
                       href={it.href}
-                      className="transition-colors hover:text-ivory"
+                      className="inline-block py-2.5 transition-colors hover:text-ivory md:py-0"
                     >
                       {it.label}
                     </Link>
